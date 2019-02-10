@@ -9,22 +9,32 @@
 
   <body class="centered-form">
     <div class="centered-form__form">
-      <form action="/chat.html">
+      <form action="/chat.html" onsubmit="process()">
         <div class="form-field">
           <h3>Join a Chat</h3>
         </div>
         <div class="form-field">
           <label>Display name</label>
-          <input type="text" name="name" autofocus>
+          <input type="text" id="user-name" name="name" autofocus>
         </div>
         <div class="form-field">
           <label>Room name</label>
-          <input type="text" name="room">
+          <input type="text" id="room-name" name="room">
         </div>
         <div class="form-field">
           <button>Join</button>
         </div>
       </form>
     </div>
+
+    <script type="text/javascript">
+      function process(){
+        let nameField = document.getElementById('user-name');
+        let roomField = document.getElementById('room-name');
+        nameField.value = nameField.value.trim();
+        roomField.value = roomField.value.trim().toLowerCase();
+      }
+
+    </script>
   </body>
 </html>
