@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="/css/styles.css">
   </head>
 
-  <body class="centered-form">
+  <body class="centered-form" onload="populateSelect()">
     <div class="centered-form__form">
-      <form action="/chat.html" onsubmit="process()">
+      <form action="/chat.html" onsubmit="process(event)">
         <div class="form-field">
           <h3>Join a Chat</h3>
         </div>
@@ -22,19 +22,19 @@
           <input type="text" id="room-name" name="room">
         </div>
         <div class="form-field">
+          <label>Available Room name</label>
+          <select id="selectRoom" name="roomSelect">
+            <option value=''>no rooms created</option>
+          </select>
+        </div>
+        <div class="form-field">
           <button>Join</button>
         </div>
       </form>
     </div>
 
-    <script type="text/javascript">
-      function process(){
-        let nameField = document.getElementById('user-name');
-        let roomField = document.getElementById('room-name');
-        nameField.value = nameField.value.trim();
-        roomField.value = roomField.value.trim().toLowerCase();
-      }
-
-    </script>
+    <script src="/js/libs/jquery-3.3.1.min.js"></script>
+    <script src="/js/index.js"></script>
+    
   </body>
 </html>
